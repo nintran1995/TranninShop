@@ -15,7 +15,7 @@ namespace TranninShop.Model.Models
         [Key]
         public string RoleId { set; get; }
 
-        [ForeignKey("RoleId")]
+       // [ForeignKey("RoleId")]
        // public virtual ApplicationRole ApplicationRole { set; get; }
 
         [ForeignKey("GroupId")]
