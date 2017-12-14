@@ -203,6 +203,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
@@ -369,6 +370,7 @@
     <Content Include="Content\Manager\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\Manager\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\Manager\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Admin\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -397,7 +399,11 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\Products\ProductDetail.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
