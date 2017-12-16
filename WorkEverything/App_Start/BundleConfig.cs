@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace WorkEverything
+namespace TranninShop.Web
 {
     public class BundleConfig
     {

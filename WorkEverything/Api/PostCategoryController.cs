@@ -6,8 +6,8 @@ using System.Web.Http;
 using TranninShop.Model.Models;
 using TranninShop.Service;
 using TranninShop.Web.Infrastructure.Core;
-using TranninShop.Web.Models;
 using TranninShop.Web.Infrastructure.Extensions;
+using TranninShop.Web.Models;
 
 namespace TranninShop.Web.Api
 {
@@ -15,7 +15,7 @@ namespace TranninShop.Web.Api
     [Authorize]
     public class PostCategoryController : ApiControllerBase
     {
-        IPostCategoryService _postCategoryService;
+        private IPostCategoryService _postCategoryService;
 
         public PostCategoryController(IErrorService errorService, IPostCategoryService postCategoryService) :
             base(errorService)
@@ -57,7 +57,6 @@ namespace TranninShop.Web.Api
                     _postCategoryService.Save();
 
                     response = request.CreateResponse(HttpStatusCode.Created, category);
-
                 }
                 return response;
             });
@@ -81,7 +80,6 @@ namespace TranninShop.Web.Api
                     _postCategoryService.Save();
 
                     response = request.CreateResponse(HttpStatusCode.OK);
-
                 }
                 return response;
             });
@@ -102,7 +100,6 @@ namespace TranninShop.Web.Api
                     _postCategoryService.Save();
 
                     response = request.CreateResponse(HttpStatusCode.OK);
-
                 }
                 return response;
             });
