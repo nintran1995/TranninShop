@@ -27,7 +27,7 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" ng-app="tranninshop">
     <!-- Site wrapper -->
     <div class="wrapper">
         <header class="main-header">
@@ -221,8 +221,8 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                            <li><a ui-sref="products"><i class="fa fa-circle-o"></i> Products</a></li>
+                            <li><a ui-sref="product_add"><i class="fa fa-circle-o"></i>Add Product</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -390,7 +390,7 @@
         <!-- =============================================== -->
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-          
+          <div ui-view></div>
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
@@ -584,11 +584,11 @@
     <!-- Begin embed AngularJs -->
     <script src="~/Assets/admin/libs/angular/angular.js"></script>
     <script src="~/Assets/admin/libs/angular-ui-router/release/angular-ui-router.js"></script>
-    @*<script src="~/Assets/admin/js/demo.js"></script>
-    <script>
-  $(document).ready(function () {
-    $('.sidebar-menu').tree()
-  })
-    </script>*@
+    <script src="~/app/shared/modules/tranninshop.common.js"></script>
+    <script src="~/app/components/products/products.module.js"></script>
+    <script src="~/app/app.js"></script>
+    <script src="~/app/components/products/productAddController.js"></script>
+    <script src="~/app/components/products/productListController.js"></script>
+    <script src="~/app/components/home/homeController.js"></script>
 </body>
 </html>

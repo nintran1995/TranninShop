@@ -24,6 +24,5 @@ namespace TranninShop.Web.Mappings
             Mapper.CreateMap<ApplicationRole, ApplicationRoleViewModel>();
             Mapper.CreateMap<ApplicationUser, ApplicationUserViewModel>();
         }
-
     }
 }
