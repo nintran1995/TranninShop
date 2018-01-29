@@ -5,12 +5,12 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Script.Serialization;
 using TranninShop.Model.Models;
 using TranninShop.Service;
 using TranninShop.Web.Infrastructure.Core;
-using TranninShop.Web.Models;
 using TranninShop.Web.Infrastructure.Extensions;
-using System.Web.Script.Serialization;
+using TranninShop.Web.Models;
 
 namespace TranninShop.Web.Api
 {
@@ -19,6 +19,7 @@ namespace TranninShop.Web.Api
     public class ProductCategoryController : ApiControllerBase
     {
         #region Initialize
+
         private IProductCategoryService _productCategoryService;
 
         public ProductCategoryController(IErrorService errorService, IProductCategoryService productCategoryService)
@@ -27,7 +28,7 @@ namespace TranninShop.Web.Api
             this._productCategoryService = productCategoryService;
         }
 
-        #endregion
+        #endregion Initialize
 
         [Route("getallparents")]
         [HttpGet]
@@ -43,6 +44,7 @@ namespace TranninShop.Web.Api
                 return response;
             });
         }
+
         [Route("getbyid/{id:int}")]
         [HttpGet]
         public HttpResponseMessage GetById(HttpRequestMessage request, int id)
@@ -84,7 +86,6 @@ namespace TranninShop.Web.Api
                 return response;
             });
         }
-
 
         [Route("create")]
         [HttpPost]
@@ -168,6 +169,7 @@ namespace TranninShop.Web.Api
                 return response;
             });
         }
+
         [Route("deletemulti")]
         [HttpDelete]
         [AllowAnonymous]

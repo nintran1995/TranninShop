@@ -1,7 +1,10 @@
 ﻿/// <reference path="/Assets/admin/libs/angular/angular.js" />
 
 (function () {
-    angular.module('tranninshop', ['tranninshop.products', 'tranninshop.common']).config(config);
+    angular.module('tranninshop',
+        ['tranninshop.products',
+         'tranninshop.product_categories',
+         'tranninshop.common']).config(config);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
 

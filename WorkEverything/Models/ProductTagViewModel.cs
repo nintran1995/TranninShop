@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace TranninShop.Web.Models
+﻿namespace TranninShop.Web.Models
 {
     public class ProductTagViewModel
     {
