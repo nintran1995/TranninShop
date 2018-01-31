@@ -5,7 +5,7 @@
 
     apiService.$inject = ['$http'];
 
-    function apiDervice($http) {
+    function apiService($http) {
         return {
             get: get
         }
