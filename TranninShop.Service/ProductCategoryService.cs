@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TranninShop.Data.Infrastructure;
 using TranninShop.Data.Repositories;
 using TranninShop.Model.Models;
@@ -15,7 +16,7 @@ namespace TranninShop.Service
 
         IEnumerable<ProductCategory> GetAll();
 
-        //IEnumerable<ProductCategory> GetAll(string keyword);
+        IEnumerable<ProductCategory> GetAll(string keyword);
 
         IEnumerable<ProductCategory> GetAllByParentId(int parentId);
 
@@ -50,13 +51,13 @@ namespace TranninShop.Service
             return _ProductCategoryRepository.GetAll();
         }
 
-        //public IEnumerable<ProductCategory> GetAll(string keyword)
-        //{
-        //    if (!string.IsNullOrEmpty(keyword))
-        //        return _ProductCategoryRepository.GetMulti(x => x.Name.Contains(keyword) || x.Description.Contains(keyword));
-        //    else
-        //        return _ProductCategoryRepository.GetAll();
-        //}
+        public IEnumerable<ProductCategory> GetAll(string keyword)
+        {
+            if (!string.IsNullOrEmpty(keyword))
+                return _ProductCategoryRepository.GetMulti(x => x.Name.Contains(keyword) || x.Description.Contains(keyword));
+            else
+                return _ProductCategoryRepository.GetAll();
+        }
 
         public IEnumerable<ProductCategory> GetAllByParentId(int parentId)
         {
