@@ -10,10 +10,12 @@ namespace TranninShop.Web.Models
     {
         public int ID { set; get; }
 
-        [Required(ErrorMessage = "Yêu cầu nhập tên danh mục")]
+        //[Required(ErrorMessage = "Yêu cầu nhập tên danh mục")]
+        [Required]
         public string Name { set; get; }
 
-        [Required(ErrorMessage = "Yêu cầu nhập tiêu đề SEO")]
+        //[Required(ErrorMessage = "Yêu cầu nhập tiêu đề SEO")]
+        [Required]
         public string Alias { set; get; }
 
         public string Description { set; get; }
@@ -42,7 +44,8 @@ namespace TranninShop.Web.Models
 
         public string MetaDescription { set; get; }
 
-        [Required(ErrorMessage = "Yêu cầu nhập trạng thái")]
+        //[Required(ErrorMessage = "Yêu cầu nhập trạng thái")]
+        [Required]
         public bool Status { set; get; }
     }
 }
