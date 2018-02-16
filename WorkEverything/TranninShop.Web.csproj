@@ -5128,7 +5128,6 @@
     <Content Include="Assets\admin\libs\jQuery\.npmignore" />
     <Content Include="Assets\admin\libs\jQuery\.npmrc" />
     <Content Include="Assets\admin\libs\jQuery\.travis.yml" />
-    <Content Include="Assets\admin\libs\jQuery\bower.json" />
     <Content Include="Assets\admin\libs\jQuery\CODE_OF_CONDUCT.md" />
     <Content Include="Assets\admin\libs\jQuery\CONTRIBUTING.md" />
     <Content Include="Assets\admin\libs\jQuery\dist\.eslintrc.json" />
