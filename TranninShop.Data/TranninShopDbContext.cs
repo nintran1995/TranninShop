@@ -8,6 +8,7 @@ namespace TranninShop.Data
     {
         public TranninShopDbContext() : base("TranninShopConnection")
         {
+            // Did not include children table
             this.Configuration.LazyLoadingEnabled = false;
         }
 

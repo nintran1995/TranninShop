@@ -1,3 +1,3 @@
 ﻿(function () {
-    angular.module('tranninshop.common', ['ui.router', 'ngBootbox'])
+    angular.module('tranninshop.common', ['ui.router', 'ngBootbox', 'ngCkeditor'])
 })();

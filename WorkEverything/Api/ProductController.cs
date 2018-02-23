@@ -15,10 +15,11 @@ using TranninShop.Web.Models;
 namespace TranninShop.Web.Api
 {
     [RoutePrefix("api/product")]
-    [Authorize]
+    //[Authorize]
     public class ProductController : ApiControllerBase
     {
         #region Initialize
+
         private IProductService _productService;
 
         public ProductController(IErrorService errorService, IProductService productService)
@@ -27,38 +28,7 @@ namespace TranninShop.Web.Api
             this._productService = productService;
         }
 
-        #endregion
-
-        [Route("getallparents")]
-        [HttpGet]
-        public HttpResponseMessage GetAll(HttpRequestMessage request)
-        {
-            Func<HttpResponseMessage> func = () =>
-            {
-                var model = _productService.GetAll();
-
-                var responseData = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(model);
-
-                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
-                return response;
-            };
-            return CreateHttpResponse(request, func);
-        }
-        [Route("getbyid/{id:int}")]
-        [HttpGet]
-        public HttpResponseMessage GetById(HttpRequestMessage request, int id)
-        {
-            return CreateHttpResponse(request, () =>
-            {
-                var model = _productService.GetById(id);
-
-                var responseData = Mapper.Map<Product, ProductViewModel>(model);
-
-                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
-
-                return response;
-            });
-        }
+        #endregion Initialize
 
         [Route("getall")]
         [HttpGet]
@@ -68,12 +38,9 @@ namespace TranninShop.Web.Api
             {
                 int totalRow = 0;
                 var model = _productService.GetAll(keyword);
-
                 totalRow = model.Count();
                 var query = model.OrderByDescending(x => x.CreatedDate).Skip(page * pageSize).Take(pageSize);
-
-                var responseData = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(query.AsEnumerable());
-
+                var responseData = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(query);
                 var paginationSet = new PaginationSet<ProductViewModel>()
                 {
                     Items = responseData,
@@ -86,11 +53,36 @@ namespace TranninShop.Web.Api
             });
         }
 
+        [Route("getallparents")]
+        [HttpGet]
+        public HttpResponseMessage GetAll(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _productService.GetAll();
+                var responseData = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(model);
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response;
+            });
+        }
+
+        [Route("getbyid/{id:int}")]
+        [HttpGet]
+        public HttpResponseMessage GetById(HttpRequestMessage request, int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _productService.GetById(id);
+                var responseData = Mapper.Map<Product, ProductViewModel>(model);
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response;
+            });
+        }
 
         [Route("create")]
         [HttpPost]
         [AllowAnonymous]
-        public HttpResponseMessage Create(HttpRequestMessage request, ProductViewModel productCategoryVm)
+        public HttpResponseMessage Create(HttpRequestMessage request, ProductViewModel productVm)
         {
             return CreateHttpResponse(request, () =>
             {
@@ -102,9 +94,10 @@ namespace TranninShop.Web.Api
                 else
                 {
                     var newProduct = new Product();
-                    newProduct.UpdateProduct(productCategoryVm);
+
+                    newProduct.UpdateProduct(productVm);
                     newProduct.CreatedDate = DateTime.Now;
-                    newProduct.CreatedBy = User.Identity.Name;
+
                     _productService.Add(newProduct);
                     _productService.Save();
 
@@ -118,7 +111,7 @@ namespace TranninShop.Web.Api
 
         [Route("update")]
         [HttpPut]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public HttpResponseMessage Update(HttpRequestMessage request, ProductViewModel productVm)
         {
             return CreateHttpResponse(request, () =>
@@ -130,15 +123,15 @@ namespace TranninShop.Web.Api
                 }
                 else
                 {
-                    var dbProduct = _productService.GetById(productVm.ID);
+                    var bdProduct = _productService.GetById(productVm.ID);
 
-                    dbProduct.UpdateProduct(productVm);
-                    dbProduct.UpdatedDate = DateTime.Now;
-                    dbProduct.UpdatedBy = User.Identity.Name;
-                    _productService.Update(dbProduct);
+                    bdProduct.UpdateProduct(productVm);
+                    bdProduct.UpdatedDate = DateTime.Now;
+
+                    _productService.Update(bdProduct);
                     _productService.Save();
 
-                    var responseData = Mapper.Map<Product, ProductViewModel>(dbProduct);
+                    var responseData = Mapper.Map<Product, ProductViewModel>(bdProduct);
                     response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
 
@@ -160,20 +153,21 @@ namespace TranninShop.Web.Api
                 }
                 else
                 {
-                    var oldProductCategory = _productService.Delete(id);
+                    var oldProduct = _productService.Delete(id);
                     _productService.Save();
 
-                    var responseData = Mapper.Map<Product, ProductViewModel>(oldProductCategory);
+                    var responseData = Mapper.Map<Product, ProductViewModel>(oldProduct);
                     response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
 
                 return response;
             });
         }
+
         [Route("deletemulti")]
         [HttpDelete]
         [AllowAnonymous]
-        public HttpResponseMessage DeleteMulti(HttpRequestMessage request, string checkedProducts)
+        public HttpResponseMessage DeleteMulti(HttpRequestMessage request, string checkedProduct)
         {
             return CreateHttpResponse(request, () =>
             {
@@ -184,15 +178,14 @@ namespace TranninShop.Web.Api
                 }
                 else
                 {
-                    var listProductCategory = new JavaScriptSerializer().Deserialize<List<int>>(checkedProducts);
-                    foreach (var item in listProductCategory)
+                    var listProduct = new JavaScriptSerializer().Deserialize<List<int>>(checkedProduct);
+                    foreach (var item in listProduct)
                     {
                         _productService.Delete(item);
                     }
-
                     _productService.Save();
 
-                    response = request.CreateResponse(HttpStatusCode.OK, listProductCategory.Count);
+                    response = request.CreateResponse(HttpStatusCode.OK, listProduct.Count);
                 }
 
                 return response;
