@@ -167,7 +167,7 @@ namespace TranninShop.Web.Api
         [Route("deletemulti")]
         [HttpDelete]
         [AllowAnonymous]
-        public HttpResponseMessage DeleteMulti(HttpRequestMessage request, string checkedProduct)
+        public HttpResponseMessage DeleteMulti(HttpRequestMessage request, string checkedProducts)
         {
             return CreateHttpResponse(request, () =>
             {
@@ -178,7 +178,7 @@ namespace TranninShop.Web.Api
                 }
                 else
                 {
-                    var listProduct = new JavaScriptSerializer().Deserialize<List<int>>(checkedProduct);
+                    var listProduct = new JavaScriptSerializer().Deserialize<List<int>>(checkedProducts);
                     foreach (var item in listProduct)
                     {
                         _productService.Delete(item);
