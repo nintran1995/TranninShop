@@ -311,7 +311,7 @@
     <Content Include="app\components\home\homeView.html" />
     <Content Include="app\components\products\productAddView.html" />
     <Content Include="app\components\products\productAddController.js" />
-    <Content Include="app\components\products\producUpdateController.js" />
+    <Content Include="app\components\products\productUpdateController.js" />
     <Content Include="app\components\products\productUpdateView.html" />
     <Content Include="app\components\products\productListController.js" />
     <Content Include="app\components\products\productListView.html" />
