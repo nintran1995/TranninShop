@@ -1,10 +1,9 @@
 ﻿  <!-- Content Header (Page header) -->
 <section class="content-header">
-    <h1>Cập nhật sản phẩm</h1>
+    <h1>Cập nhật Sản phẩm</h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
-        <li><a href="#">Sản phẩm</a></li>
-        <li><a ui-sref="products">Danh sách sản phẩm</a></li>
+        <li><a ui-sref="products">Sản phẩm</a></li>
         <li class="active">Cập nhật</li>
     </ol>
 </section>
@@ -12,10 +11,6 @@
 <section class="content">
     <!-- Horizontal Form -->
     <div class="box box-info">
-        <div class="box-header with-border">
-            <h3 class="box-title">Thông tin Sản phẩm: {{product.Name}}</h3>
-        </div>
-        <!-- /.box-header -->
         <!-- form start -->
         <form class="form-horizontal" novalidate name="frmUpdateProduct" role="form" ng-submit="UpdateProduct()">
             <div class="box-body">
@@ -84,7 +79,7 @@
                     <div class="col-sm-9">
                         <input type="text" class="form-control" name="image" ng-model="product.Image">
                         <span ng-show="frmUpdateProduct.image.$error.maxlength" class="text-danger">Hình ảnh chỉ được 256 ký tự</span>
-                        <button class="btn btn-default" type="button" ng-click="ChooseImage()">Chọn ảnh</button>
+                        <button style="margin-top:5px" class="btn btn-default" type="button" ng-click="ChooseImage()">Chọn ảnh</button>
                     </div>
                 </div>
 

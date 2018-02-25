@@ -383,6 +383,7 @@
     <Content Include="Assets\admin\img\credit\visa.png" />
     <Content Include="Assets\admin\img\default-50x50.gif" />
     <Content Include="Assets\admin\img\icons.png" />
+    <Content Include="Assets\admin\img\information-technology-services-500x500.jpg" />
     <Content Include="Assets\admin\img\photo1.png" />
     <Content Include="Assets\admin\img\photo2.png" />
     <Content Include="Assets\admin\img\photo3.jpg" />
@@ -6044,6 +6045,13 @@
     <Content Include="Assets\admin\libs\ckeditor\skins\moono\readme.md" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\admin\libs\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
+    <Content Include="Assets\admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Assets\admin\libs\ngBootbox\.bower.json" />
     <Content Include="Assets\admin\libs\ngBootbox\bower.json" />
     <Content Include="Assets\admin\libs\ngBootbox\package.json" />
@@ -6054,13 +6062,6 @@
     <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\tsd.d.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Assets\admin\libs\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
-    <Content Include="Assets\admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Assets\admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Assets\admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Assets\admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\admin\libs\angular-ui-router\.bower.json" />
