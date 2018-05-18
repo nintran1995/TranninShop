@@ -31,6 +31,7 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -309,9 +310,6 @@
     <Content Include="app\app.js" />
     <Content Include="app\components\home\homeController.js" />
     <Content Include="app\components\home\homeView.html" />
-    <Content Include="app\components\home\rootController.js" />
-    <Content Include="app\components\login\loginController.js" />
-    <Content Include="app\components\login\loginView.html" />
     <Content Include="app\components\products\productAddView.html" />
     <Content Include="app\components\products\productAddController.js" />
     <Content Include="app\components\products\productUpdateController.js" />
@@ -334,7 +332,6 @@
     <Content Include="app\shared\services\apiService.js" />
     <Content Include="app\shared\services\commonService.js" />
     <Content Include="app\shared\services\notificationService.js" />
-    <Content Include="app\shared\views\baseView.html" />
     <Content Include="Assets\admin\css\AdminLTE.css" />
     <Content Include="Assets\admin\css\AdminLTE.min.css" />
     <Content Include="Assets\admin\css\alt\AdminLTE-bootstrap-social.css" />
@@ -387,7 +384,6 @@
     <Content Include="Assets\admin\img\credit\visa.png" />
     <Content Include="Assets\admin\img\default-50x50.gif" />
     <Content Include="Assets\admin\img\icons.png" />
-    <Content Include="Assets\admin\img\information-technology-services-500x500.jpg" />
     <Content Include="Assets\admin\img\photo1.png" />
     <Content Include="Assets\admin\img\photo2.png" />
     <Content Include="Assets\admin\img\photo3.jpg" />
@@ -5626,13 +5622,6 @@
     <Content Include="bower.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\admin\libs\angular\.bower.json" />
-    <Content Include="Assets\admin\libs\angular\angular.min.js.gzip" />
-    <Content Include="Assets\admin\libs\angular\angular.min.js.map" />
-    <Content Include="Assets\admin\libs\angular\bower.json" />
-    <Content Include="Assets\admin\libs\angular\LICENSE.md" />
-    <Content Include="Assets\admin\libs\angular\package.json" />
-    <Content Include="Assets\admin\libs\angular\README.md" />
     <Content Include="Assets\admin\libs\bootstrap\.bower.json" />
     <Content Include="Assets\admin\libs\bootstrap\bower.json" />
     <Content Include="Assets\admin\libs\bootstrap\CHANGELOG.md" />
@@ -6056,18 +6045,6 @@
     <Content Include="Assets\admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\admin\libs\ngBootbox\.bower.json" />
-    <Content Include="Assets\admin\libs\ngBootbox\bower.json" />
-    <Content Include="Assets\admin\libs\ngBootbox\package.json" />
-    <Content Include="Assets\admin\libs\ngBootbox\README.md" />
-    <Content Include="Assets\admin\libs\ngBootbox\tsd.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\angularjs\angular.d.ts" />
-    <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\jquery\jquery.d.ts" />
-    <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\tsd.d.ts" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Assets\admin\libs\angular-ui-router\.bower.json" />
     <Content Include="Assets\admin\libs\angular-ui-router\artifacts.json" />
     <Content Include="Assets\admin\libs\angular-ui-router\bower.json" />
@@ -6089,6 +6066,27 @@
     <Content Include="Assets\admin\libs\angular-ui-router\tslint.json" />
     <Content Include="Assets\admin\libs\angular-ui-router\typedoc.json" />
     <Content Include="Assets\admin\libs\angular-ui-router\yarn.lock" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\admin\libs\ngBootbox\.bower.json" />
+    <Content Include="Assets\admin\libs\ngBootbox\bower.json" />
+    <Content Include="Assets\admin\libs\ngBootbox\package.json" />
+    <Content Include="Assets\admin\libs\ngBootbox\README.md" />
+    <Content Include="Assets\admin\libs\ngBootbox\tsd.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\tsd.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\admin\libs\angular\.bower.json" />
+    <Content Include="Assets\admin\libs\angular\angular.min.js.gzip" />
+    <Content Include="Assets\admin\libs\angular\angular.min.js.map" />
+    <Content Include="Assets\admin\libs\angular\bower.json" />
+    <Content Include="Assets\admin\libs\angular\LICENSE.md" />
+    <Content Include="Assets\admin\libs\angular\package.json" />
+    <Content Include="Assets\admin\libs\angular\README.md" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
