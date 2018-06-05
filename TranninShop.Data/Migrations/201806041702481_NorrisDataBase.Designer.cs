@@ -6,14 +6,14 @@ namespace TranninShop.Data.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialDB : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
+    public sealed partial class NorrisDataBase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialDB));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(NorrisDataBase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712100529176_InitialDB"; }
+            get { return "201806041702481_NorrisDataBase"; }
         }
         
         string IMigrationMetadata.Source

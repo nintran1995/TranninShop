@@ -23,7 +23,7 @@ namespace TranninShop.Web.Api
         [Route("TestMethod")]
         public string TestMethod()
         {
-            return "Hello, TEDU Member. ";
+            return "Hello, My name is Norris. ";
         }
     }
 }

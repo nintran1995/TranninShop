@@ -15,7 +15,7 @@ using TranninShop.Web.Models;
 namespace TranninShop.Web.Api
 {
     [RoutePrefix("api/product")]
-    //[Authorize]
+    [Authorize]
     public class ProductController : ApiControllerBase
     {
         #region Initialize
@@ -97,6 +97,7 @@ namespace TranninShop.Web.Api
 
                     newProduct.UpdateProduct(productVm);
                     newProduct.CreatedDate = DateTime.Now;
+					newProduct.CreatedBy = User.Identity.Name;
 
                     _productService.Add(newProduct);
                     _productService.Save();
@@ -127,8 +128,9 @@ namespace TranninShop.Web.Api
 
                     bdProduct.UpdateProduct(productVm);
                     bdProduct.UpdatedDate = DateTime.Now;
+					bdProduct.UpdatedBy = User.Identity.Name;
 
-                    _productService.Update(bdProduct);
+					_productService.Update(bdProduct);
                     _productService.Save();
 
                     var responseData = Mapper.Map<Product, ProductViewModel>(bdProduct);
