@@ -5406,6 +5406,67 @@
     <Content Include="Assets\admin\libs\toastr\toastr.js" />
     <Content Include="Assets\admin\libs\toastr\toastr.min.css" />
     <Content Include="Assets\admin\libs\toastr\toastr.min.js" />
+    <Content Include="Assets\client\css\etalage.css" />
+    <Content Include="Assets\client\css\form.css" />
+    <Content Include="Assets\client\css\megamenu.css" />
+    <Content Include="Assets\client\css\style.css" />
+    <Content Include="Assets\client\images\arrow.png" />
+    <Content Include="Assets\client\images\arrow2.gif" />
+    <Content Include="Assets\client\images\arrows.png" />
+    <Content Include="Assets\client\images\as.png" />
+    <Content Include="Assets\client\images\b-arrow.png" />
+    <Content Include="Assets\client\images\banner1.jpg" />
+    <Content Include="Assets\client\images\banner2.jpg" />
+    <Content Include="Assets\client\images\border.png" />
+    <Content Include="Assets\client\images\b_star.png" />
+    <Content Include="Assets\client\images\down_arrow.png" />
+    <Content Include="Assets\client\images\f_icon.png" />
+    <Content Include="Assets\client\images\f_icon1.png" />
+    <Content Include="Assets\client\images\f_icon2.png" />
+    <Content Include="Assets\client\images\img-sprite.png" />
+    <Content Include="Assets\client\images\logo.png" />
+    <Content Include="Assets\client\images\logo_home.ico" />
+    <Content Include="Assets\client\images\men_icon.ico" />
+    <Content Include="Assets\client\images\nav_img.jpg" />
+    <Content Include="Assets\client\images\nav_img1.jpg" />
+    <Content Include="Assets\client\images\nav_img2.jpg" />
+    <Content Include="Assets\client\images\nz.png" />
+    <Content Include="Assets\client\images\pic.jpg" />
+    <Content Include="Assets\client\images\pic1.jpg" />
+    <Content Include="Assets\client\images\pic10.jpg" />
+    <Content Include="Assets\client\images\pic11.jpg" />
+    <Content Include="Assets\client\images\pic2.jpg" />
+    <Content Include="Assets\client\images\pic3.jpg" />
+    <Content Include="Assets\client\images\pic4.jpg" />
+    <Content Include="Assets\client\images\pic5.jpg" />
+    <Content Include="Assets\client\images\pic6.jpg" />
+    <Content Include="Assets\client\images\pic7.jpg" />
+    <Content Include="Assets\client\images\pic8.jpg" />
+    <Content Include="Assets\client\images\pic9.jpg" />
+    <Content Include="Assets\client\images\pk.png" />
+    <Content Include="Assets\client\images\plus.png" />
+    <Content Include="Assets\client\images\radius.png" />
+    <Content Include="Assets\client\images\srl.png" />
+    <Content Include="Assets\client\images\star.png" />
+    <Content Include="Assets\client\images\s_arrow.png" />
+    <Content Include="Assets\client\images\t1.jpg" />
+    <Content Include="Assets\client\images\t2.jpg" />
+    <Content Include="Assets\client\images\t3.jpg" />
+    <Content Include="Assets\client\images\t4.jpg" />
+    <Content Include="Assets\client\images\t5.jpg" />
+    <Content Include="Assets\client\images\t6.jpg" />
+    <Content Include="Assets\client\images\uk.png" />
+    <Content Include="Assets\client\images\us.png" />
+    <Content Include="Assets\client\images\wish.png" />
+    <Content Include="Assets\client\images\zoom.png" />
+    <Content Include="Assets\client\js\easing.js" />
+    <Content Include="Assets\client\js\jquery.etalage.min.js" />
+    <Content Include="Assets\client\js\jquery.flexisel.js" />
+    <Content Include="Assets\client\js\jquery.jscrollpane.min.js" />
+    <Content Include="Assets\client\js\jquery.min.js" />
+    <Content Include="Assets\client\js\jquery.wmuSlider.js" />
+    <Content Include="Assets\client\js\megamenu.js" />
+    <Content Include="Assets\client\js\move-top.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -5573,7 +5634,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutHomeShop.cshtml" />
+    <Content Include="Views\Shared\Layouts.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Products\ProductDetail.cshtml" />
   </ItemGroup>
@@ -5584,7 +5645,6 @@
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
     <Folder Include="Assets\admin\libs\checklist-model\test\" />
-    <Folder Include="Assets\client\" />
     <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
@@ -6083,6 +6143,51 @@
     <Content Include="Assets\admin\libs\angular-ui-router\tslint.json" />
     <Content Include="Assets\admin\libs\angular-ui-router\typedoc.json" />
     <Content Include="Assets\admin\libs\angular-ui-router\yarn.lock" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ConnectionString.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppSettings.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\client\images\arrows.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\client\images\fb.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\client\images\g+.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\client\images\img-sprite.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\client\images\logo.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\client\images\radius.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\client\images\s_arrow.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\client\images\social.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\client\images\star.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\client\images\tw.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Footer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Bander.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Header.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
