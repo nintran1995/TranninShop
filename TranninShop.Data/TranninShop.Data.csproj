@@ -64,9 +64,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201806041702481_NorrisDataBase.cs" />
-    <Compile Include="Migrations\201806041702481_NorrisDataBase.Designer.cs">
-      <DependentUpon>201806041702481_NorrisDataBase.cs</DependentUpon>
+    <Compile Include="Migrations\201812111243466_NinDataBase.cs" />
+    <Compile Include="Migrations\201812111243466_NinDataBase.Designer.cs">
+      <DependentUpon>201812111243466_NinDataBase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,8 +113,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806041702481_NorrisDataBase.resx">
-      <DependentUpon>201806041702481_NorrisDataBase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812111243466_NinDataBase.resx">
+      <DependentUpon>201812111243466_NinDataBase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -3,7 +3,7 @@ namespace TranninShop.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class NorrisDataBase : DbMigration
+    public partial class NinDataBase : DbMigration
     {
         public override void Up()
         {

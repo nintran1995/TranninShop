@@ -31,16 +31,18 @@ namespace TranninShop.UnitTest.RepositoryTest
         [TestMethod]
         public void PostCategory_Repository_Create()
         {
-            PostCategory category = new PostCategory();
-            category.Name = "Test category";
-            category.Alias = "Test-category";
-            category.Status = true;
+			PostCategory category = new PostCategory
+			{
+				Name = "Test category",
+				Alias = "Test-category",
+				Status = true
+			};
 
-            var result = objRepository.Add(category);
+			var result = objRepository.Add(category);
             unitOfWork.Commit();
 
             Assert.IsNotNull(result);
-            Assert.AreEqual(3, result.ID);
+            Assert.AreEqual(4, result.ID);
         }
     }
 }

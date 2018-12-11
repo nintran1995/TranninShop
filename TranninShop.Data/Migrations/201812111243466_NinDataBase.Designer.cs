@@ -7,13 +7,13 @@ namespace TranninShop.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class NorrisDataBase : IMigrationMetadata
+    public sealed partial class NinDataBase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(NorrisDataBase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(NinDataBase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806041702481_NorrisDataBase"; }
+            get { return "201812111243466_NinDataBase"; }
         }
         
         string IMigrationMetadata.Source

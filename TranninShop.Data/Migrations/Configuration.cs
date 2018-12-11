@@ -2,13 +2,14 @@
 {
 	using Microsoft.AspNet.Identity;
 	using Microsoft.AspNet.Identity.EntityFramework;
-	using Model.Models;
 	using System;
 	using System.Collections.Generic;
+	using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+	using TranninShop.Model.Models;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<TranninShop.Data.TranninShopDbContext>
+	internal sealed class Configuration : DbMigrationsConfiguration<TranninShop.Data.TranninShopDbContext>
     {
         public Configuration()
         {
@@ -17,7 +18,28 @@
 
         protected override void Seed(TranninShop.Data.TranninShopDbContext context)
         {
-            CreateProductCategorySample(context);
+			CreateProductCategorySample(context);
+			CreateUser(context);
+		}
+
+		private void CreateProductCategorySample(TranninShopDbContext context)
+		{
+			if (context.ProductCategories.Count() == 0)
+			{
+				List<ProductCategory> listProductCategory = new List<ProductCategory>()
+			{
+				new ProductCategory() { Name="Điện lạnh",Alias="dien-lanh",Status=true },
+				 new ProductCategory() { Name="Viễn thông",Alias="vien-thong",Status=true },
+				  new ProductCategory() { Name="Đồ gia dụng",Alias="do-gia-dung",Status=true },
+				   new ProductCategory() { Name="Mỹ phẩm",Alias="my-pham",Status=true }
+			};
+				context.ProductCategories.AddRange(listProductCategory);
+				context.SaveChanges();
+			}
+		}
+
+		private void CreateUser(TranninShopDbContext context)
+		{
 			var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new TranninShopDbContext()));
 
 			var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new TranninShopDbContext()));
@@ -43,23 +65,5 @@
 
 			manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
 		}
-
-        private void CreateProductCategorySample(TranninShopDbContext context)
-        {
-            if (context.ProductCategories.Count() == 0)
-            {
-                List<ProductCategory> productCategorys = new List<ProductCategory>()
-            {
-                new ProductCategory() { Name = "Giày", Alias = "giay", Status = true},
-                new ProductCategory() { Name = "Mũ bảo hiểm", Alias = "mu-bao-hiem", Status = true},
-                new ProductCategory() { Name = "Quần Jean", Alias = "quan-jean", Status = true},
-                new ProductCategory() { Name = "Áo", Alias = "ao", Status = true},
-                new ProductCategory() { Name = "Mũ", Alias = "mu", Status = true},
-                new ProductCategory() { Name = "Dép", Alias = "dep", Status = true}
-            };
-                context.ProductCategories.AddRange(productCategorys);
-                context.SaveChanges();
-            }
-        }
-    }
+	}
 }

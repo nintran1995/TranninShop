@@ -109,7 +109,7 @@ namespace TranninShop.Web.App_Start
 				}
 				else
 				{
-					context.SetError("invalid_grant", "Tài khoản hoặc mật khẩu không đúng'");
+					context.SetError("invalid_grant", "Tài khoản hoặc mật khẩu không đúng.'");
 					context.Rejected();
 				}
 			}

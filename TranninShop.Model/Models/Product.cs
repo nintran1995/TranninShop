@@ -9,7 +9,7 @@ namespace TranninShop.Model.Models
     public class Product : Auditable
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //Auto increase
         public int ID { set; get; }
 
         [Required]
